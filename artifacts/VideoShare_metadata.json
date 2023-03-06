@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.6+commit.11564f7e"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -170,6 +170,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -206,6 +211,11 @@
 					{
 						"internalType": "string",
 						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_url",
 						"type": "string"
 					},
 					{
@@ -263,6 +273,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
 						"name": "timestamp",
 						"type": "uint256"
@@ -292,7 +307,7 @@
 		"compilationTarget": {
 			"contract.sol": "VideoShare"
 		},
-		"evmVersion": "berlin",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -305,11 +320,11 @@
 	},
 	"sources": {
 		"contract.sol": {
-			"keccak256": "0x4784e8494d63a7808717fe5e26fb8570061c9885ef08395c2d0af71a90bb7776",
+			"keccak256": "0x65790535a01c0381158d1e2298847dc4c0e9c2b70ff316573531e93351ee0046",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f7508d855b7fa8c91277362925fda970830e1991b0d7c08be72d6c11ea76dd2b",
-				"dweb:/ipfs/QmaHytJFqswhMpoFrcbGmtCPCRn3JRxrqETB52iD3c18ht"
+				"bzz-raw://3c77405ab65e43d5c16d7eb52ec14c2dd9769135a384b386e8e9023539ddcc31",
+				"dweb:/ipfs/QmWh51gdwvCipaqs9GGbt2kR2dY7Ae7W1pW44VMA4N7XSr"
 			]
 		}
 	},

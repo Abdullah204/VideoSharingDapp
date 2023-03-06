@@ -7,6 +7,7 @@ contract VideoShare {
         string title;
         string description;
         string videoHash;
+        string url;
         uint256 timestamp;
         mapping(uint256 => Comment) comments;
         uint256 commentCount;
@@ -24,13 +25,14 @@ contract VideoShare {
     event VideoUploaded(uint256 videoId, string title, string description, string videoHash, uint256 timestamp);
     event CommentAdded(uint256 videoId, uint256 commentId, string text, uint256 timestamp);
 
-    function uploadVideo(string memory _title, string memory _description, string memory _videoHash) public {
+    function uploadVideo(string memory _title, string memory _description ,string memory _url ,string memory _videoHash) public {
         videoCount++;
         Video storage newVideo = videos[videoCount];
         newVideo.owner = msg.sender;
         newVideo.title = _title;
         newVideo.description = _description;
         newVideo.timestamp = block.timestamp;
+        newVideo.url = _url;
         newVideo.commentCount = 0;
         emit VideoUploaded(videoCount, _title, _description, _videoHash, block.timestamp);
     }
@@ -43,11 +45,12 @@ contract VideoShare {
         emit CommentAdded(_videoId, video.commentCount, _text, block.timestamp);
     }
 
-    function getVideo(uint256 _videoId) public view returns (string memory, string memory, string memory, uint256, uint256) {
+    function getVideo(uint256 _videoId) public view returns (string memory, string memory, string memory,string memory, uint256, uint256) {
         require(_videoId <= videoCount && _videoId > 0, "Invalid video ID");
         Video storage video = videos[_videoId];
-        return (video.title, video.description, video.videoHash, video.timestamp, video.commentCount);
+        return (video.title, video.description, video.videoHash,video.url, video.timestamp, video.commentCount);
     }
+   
 
     function getComment(uint256 _videoId, uint256 _commentId) public view returns (string memory, address, uint256) {
         require(_videoId <= videoCount && _videoId > 0, "Invalid video ID");
